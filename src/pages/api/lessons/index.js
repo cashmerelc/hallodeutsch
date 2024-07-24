@@ -1,5 +1,5 @@
-import dbConnect from "../../../utils/dbConnect";
-import Lesson from "../../../models/Lesson";
+import dbConnect from "../../../db/dbConnect";
+import Lesson from "../../../db/models/Lesson";
 import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {

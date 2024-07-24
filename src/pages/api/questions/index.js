@@ -1,5 +1,5 @@
-import dbConnect from "../../../utils/dbConnect";
-import Question from "../../../models/Question";
+import dbConnect from "../../../db/dbConnect";
+import Question from "../../../db/models/Question";
 import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
