@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import RichTextEditor from "../../components/TextEditor/RichTextEditor";
 
 export default function Dashboard() {
   const { data: session } = useSession();
-  const router = useRouter();
+  //   const router = useRouter();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [lessons, setLessons] = useState([]);
@@ -24,10 +24,10 @@ export default function Dashboard() {
     }
   };
 
-  if (!session) {
-    router.push("/auth/signin");
-    return null;
-  }
+  //   if (!session) {
+  //     router.push("/auth/signin");
+  //     return null;
+  //   }
 
   return (
     <div>
