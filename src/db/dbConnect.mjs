@@ -4,8 +4,6 @@ import mongoose from "mongoose";
 config({ path: "./.env.local" });
 
 const MONGODB_URI = process.env.MONGODB_URI;
-console.log("MONGODB_URI: ", MONGODB_URI);
-console.log("ENV: ", process.env);
 
 if (!MONGODB_URI) {
   throw new Error(

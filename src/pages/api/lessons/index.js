@@ -1,6 +1,6 @@
 import dbConnect from "../../../db/dbConnect";
 import Lesson from "../../../db/models/Lesson";
-import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       try {
-        const session = await getSession({ req });
+        const session = await getServerSession({ req });
         if (!session) {
           return res
             .status(401)
