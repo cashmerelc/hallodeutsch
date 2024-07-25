@@ -1,6 +1,5 @@
 import dbConnect from "../../../db/dbConnect";
 import Lesson from "../../../db/models/Lesson";
-import { getServerSession } from "next-auth";
 
 export default async function handler(req, res) {
   const { method } = req;
@@ -10,16 +9,10 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       try {
-        const session = await getServerSession({ req });
-        if (!session) {
-          return res
-            .status(401)
-            .json({ success: false, message: "Not authenticated" });
-        }
-
         const lesson = await Lesson.create({ ...req.body });
         res.status(201).json({ success: true, data: lesson });
       } catch (error) {
+        console.log("POST Error: ", error);
         res.status(400).json({ success: false, error });
       }
       break;

@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { method } = req;
 
   await dbConnect();
-
+  console.log("Questions Request: ", req.body);
   switch (method) {
     case "POST":
       try {
