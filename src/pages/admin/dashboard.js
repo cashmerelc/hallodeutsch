@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import RichTextEditor from "../../components/RichTextEditor";
+import RichTextEditor from "../../components/TextEditor/RichTextEditor";
 
 export default function Dashboard() {
   const { data: session } = useSession();
